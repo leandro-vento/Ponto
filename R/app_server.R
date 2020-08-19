@@ -9,7 +9,7 @@ app_server <- function( input, output, session ) {
   
   caminho <- "\\\\fgvspgvc\\ibre-sapr\\Nat\\z-Organização Anterior SIMG\\00-FUNCIONARIOS E DIVERSOS\\03_Equipe\\LEANDRO\\Ponto\\"
   
-  con <- RSQLite::dbConnect(RSQLite::SQLite(), dbname = paste0(caminho, "ponto.sqlite"))
+  con <- RSQLite::dbConnect(RSQLite::SQLite(), dbname = normalizePath(paste0(caminho, "ponto.sqlite")))
   
   tab_selecionada <- callModule(mod_menu_esquerdo_server, "menu_esquerdo_ui_1")
   
