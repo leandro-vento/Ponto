@@ -1,0 +1,36 @@
+Package: Ponto
+Title: PKG_TITLE
+Version: 0.0.0.9000
+Authors@R: person('AUTHOR_FIRST', 'AUTHOR_LAST', email = 'AUTHOR@MAIL.COM', role = c('cre', 'aut'))
+Description: PKG_DESC.
+License: MIT + file LICENSE
+Imports: 
+    config,
+    golem,
+    shiny,
+    DBI,
+    DT,
+    formattable,
+    ggplot2,
+    kableExtra,
+    leaflet,
+    leaflet.extras,
+    openxlsx,
+    plotly,
+    rgdal,
+    RSQLite,
+    sf,
+    shinybusy,
+    shinydashboard,
+    shinydashboardPlus,
+    shinyjs,
+    shinyWidgets,
+    thinkr,
+    lubridate
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
