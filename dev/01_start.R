@@ -44,9 +44,8 @@ usethis::use_news_md( open = FALSE )
 ## Use Recommended Packages ----
 golem::use_recommended_deps(recommended = c("shinydashboard", "shinydashboardPlus", "shinyjs", 
                                             "shinyWidgets", "formattable", "kableExtra", "DT",
-                                            "RSQLite", "DBI", "openxlsx", "plotly", "ggplot2",
-                                            "leaflet", "leaflet.extras", "rgdal", "sf",
-                                            "shinybusy", "lubridate"))
+                                            "RSQLite", "DBI", "openxlsx", "rgdal", "sf",
+                                            "shinybusy"))
 
 ## Favicon ----
 # If you want to change the favicon (default is golem's one)
