@@ -50,3 +50,6 @@ converter_decimal_para_hora <- function(tempo){
 }
 
 converter_decimal_para_hora(8.75)
+
+remotes::install_github("leandro-vento/Ponto", upgrade = "never")
+Ponto::run_app()

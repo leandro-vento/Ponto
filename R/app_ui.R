@@ -121,27 +121,6 @@ app_ui <- function(request) {
       
       }
       
-      ddiv#resultados_ui_1-donut_amostras.plotly.html-widget.html-widget-output.shiny-report-size.shiny-bound-output {
-      
-      height:auto;
-      
-      }
-      
-      div#resultados_ui_1-donut_homem_mulher.plotly.html-widget.html-widget-output.shiny-report-size.shiny-bound-output {
-      
-      height:auto;
-      
-      }
-      
-      #mapa_ui_1-mapa {
-      height: calc(100vh - 51px) !important;
-      overflow: hidden;
-      margin-top: -15px;
-      margin-bottom: -53px;
-      margin-left: -15px;
-      margin-right: -15px;
-      }
-      
       .tab-content {
       
       width: 100%;
@@ -218,8 +197,6 @@ app_ui <- function(request) {
                       .modal-content {
                       
                         border-radius: 50%;
-                        width: 60px;
-                        height: 60px;
                       
                       }
                       
@@ -295,39 +272,8 @@ app_ui <- function(request) {
                       margin-bottom: -13px;
                       
                       }
-                      #conferencia_calculo_ok {
-                      color: #00FF00;
-                      background-color: transparent;
-                      font-size: 15px;
-                                           
-                      }
-                      #conferencia_calculo_nok {
-                      color: #FF0000;
-                      background-color: transparent;
-                      font-size: 15px;
-                                           
-                      }
-                      #conferencia {
-                      position: absolute;
-                      top: 0px;
-                      right: 0px;
-                                           
-                      }")),
-        tags$head(tags$style(type="text/css", "
-             #loadmessage {
-               position: fixed;
-               top: 0px;
-               left: 0px;
-               width: 100%;
-               padding: 5px 0px 5px 0px;
-               text-align: center;
-               font-weight: bold;
-               font-size: 100%;
-               color: #FFFFFF;
-               background-color: #003BD1;
-               z-index: 105;
-             }
-          ")),
+                      ")),
+        
         tags$head(tags$style("#modal1 .modal-content { background-color: transparent; }")),
         
         tabItems(

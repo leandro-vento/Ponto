@@ -196,6 +196,7 @@ mod_marcacao_ponto_server <- function(input, output, session, usuario, con){
       ListaFuncionarios
     }, options = list(pageLength = 27, dom = "tp", scrollX = TRUE, scrollY = TRUE), colnames = c("Nome", "Status"), rownames = FALSE, selection = "single") %>% 
       DT::formatStyle("Status", target = 'row',
+                      color = "#FFFFFF",
                       backgroundColor = DT::styleEqual(c("online", "offline"), c("green", "red")))
     
     
@@ -216,7 +217,7 @@ mod_marcacao_ponto_server <- function(input, output, session, usuario, con){
   # Verificação para renderizar o botão de play ou stop----
   observe({
     
-    FuncionarioLogado <- RSQLite::dbGetQuery(conn = con, paste0("SELECT * FROM Ponto WHERE Login='", usuario$usuario(), "' AND Status='online'"))
+    FuncionarioLogado <- RSQLite::dbGetQuery(conn = con, paste0("SELECT * FROM Ponto WHERE Login='", usuario$usuario(), "' AND Data=DATE('now', 'localtime') AND Status='online'"))
     
     if(nrow(FuncionarioLogado) > 0){
       
@@ -349,8 +350,38 @@ mod_marcacao_ponto_server <- function(input, output, session, usuario, con){
   # Evento para Excluir a marcação no ponto----
   observeEvent(input$excluir_ponto, {
     
-    
-    
+    if(length(input$lista_ponto_rows_selected) > 0){
+      
+      showModal(
+        
+        tags$div(id="modal1", 
+                 
+                 modalDialog(size = "m",
+                             title = NULL,
+                             
+                             box(width = 12,
+                                 status = "primary",
+                                 solidHeader = TRUE,
+                                 align = "center",
+                                 title = "Tem certeza que deseja excluir essa marcação?",
+                                 
+                                 fluidRow(
+                                   column(6, align = "center",
+                                          actionButton(ns("excluir_marcacao_sim"), label = h4("SIM"))
+                                   ),
+                                   column(6, align = "center",
+                                          actionButton(ns("excluir_marcacao_nao"), label = h4("NÃO"))
+                                   )
+                                 )
+                             ),
+                             easyClose = TRUE,
+                             footer = NULL
+                 )
+        )
+      )
+      
+    }
+
   })
   
 }
